@@ -1,6 +1,8 @@
 # vue-crash-2024
 
-This template should help get you started developing with Vue 3 in Vite.
+Some VUE.js practice.
+
+---
 
 ## Recommended IDE Setup
 
@@ -10,7 +12,11 @@ This template should help get you started developing with Vue 3 in Vite.
 
 See [Vite Configuration Reference](https://vitejs.dev/config/).
 
-## Project Setup
+---
+
+## COMMANDS
+
+### Project Setup
 
 ```sh
 npm install
@@ -22,8 +28,14 @@ npm install
 npm run dev
 ```
 
+And see it running at: [http://localhost:5173/](http://localhost:5173/)
+
+
+
 ### Compile and Minify for Production
 
 ```sh
 npm run build
 ```
+
+---
