@@ -28,7 +28,7 @@ npm install
 npm run dev
 ```
 
-And see it running at: [http://localhost:5173/](http://localhost:5173/)
+And see it running at: [http://localhost:3000/](http://localhost:3000/)
 
 
 
@@ -37,5 +37,11 @@ And see it running at: [http://localhost:5173/](http://localhost:5173/)
 ```sh
 npm run build
 ```
+
+---
+
+## NOTES
+
+At file `notas.md`you can take a look of some annotations I did with the basic of VUE.js
 
 ---
