@@ -3,6 +3,7 @@
 Algunas anotaciones de cosas básicas de VUE.js.
 
 ---
+
 ---
 
 ## VUE API PREFERENCE: OPTIONS
@@ -16,11 +17,11 @@ Para renderizar condicionalmente, es como el ternario de React, si cumple el `if
 export default {
   data() {
     return {
-      name: 'John Doe',
-      status: true
-    }
-  }
-}
+      name: "John Doe",
+      status: true,
+    };
+  },
+};
 </script>
 
 <template>
@@ -45,10 +46,10 @@ Para renderizar condicionalmente. Observar que tanto en el `if`como en el `else-
 export default {
   data() {
     return {
-      status: 'pending'
-    }
-  }
-}
+      status: "pending",
+    };
+  },
+};
 </script>
 
 <template>
@@ -71,17 +72,17 @@ Como el `.map`para recorrer los elementos:
 export default {
   data() {
     return {
-      tasks: ['Task 1', 'Task 2', 'Task 3']
-    }
-  }
-}
+      tasks: ["Task 1", "Task 2", "Task 3"],
+    };
+  },
+};
 </script>
 
 <template>
   <div>
     <h3>Tasks:</h3>
     <ul>
-      <li v-for="task in tasks" :key="task">{{ task }} </li>
+      <li v-for="task in tasks" :key="task">{{ task }}</li>
     </ul>
   </div>
 </template>
@@ -98,10 +99,10 @@ Para bindear cualquier data, por ejemplo en un `<a>` con el `href`:
 export default {
   data() {
     return {
-      link: 'https://google.com'
-    }
-  }
-}
+      link: "https://google.com",
+    };
+  },
+};
 </script>
 
 <template>
@@ -114,7 +115,7 @@ export default {
 Otro modo de hacerlo, sin `v-bind`, directamente con `:href`:
 
 ```vue
- <a :href="link">Click for Google</a>
+<a :href="link">Click for Google</a>
 ```
 
 ---
@@ -128,36 +129,37 @@ Para el evento `onClick`del `<button>`. Otro modo es con `@click`. Ejemplo:
 export default {
   data() {
     return {
-      status: 'pending',
-    }
+      status: "pending",
+    };
   },
   methods: {
     toggleStatus() {
-      console.log('toggleStatus')
-      if(this.status === 'active') {
-        this.status === 'pending'
-      } else if (this.status === 'pending') {
-        this.status === 'inactive'
+      console.log("toggleStatus");
+      if (this.status === "active") {
+        this.status === "pending";
+      } else if (this.status === "pending") {
+        this.status === "inactive";
       } else {
-        this.status === 'active'
+        this.status === "active";
       }
-    }
-  }
+    },
+  },
 };
 </script>
 
 <template>
   <div>
     <!--<button v-on:click="toggleStatus" >Change status</button>-->
-    <button @click="toggleStatus" >Change status</button>
+    <button @click="toggleStatus">Change status</button>
   </div>
 </template>
 ```
 
 ---
+
 ---
 
-## VUE API PREFERENCE: COMPOSITION (the hard way)   
+## VUE API PREFERENCE: COMPOSITION (the hard way)
 
 - Tengo que envolver todo en `setup()`.
 
@@ -167,31 +169,71 @@ export default {
 
 ```vue
 <script>
-import { ref } from 'vue';
+import { ref } from "vue";
 
 export default {
   setup() {
-    const name = ref('John Doe');
-    const status = ref('active');
-    const tasks = ref(['Task 1', 'Task 2', 'Task 3']);
+    const name = ref("John Doe");
+    const status = ref("active");
+    const tasks = ref(["Task 1", "Task 2", "Task 3"]);
 
     const toggleStatus = () => {
-      console.log('toggleStatus')
-      if(status.value === 'active') {
-        status.value === 'pending'
-      } else if (status.value === 'pending') {
-        status.value === 'inactive'
+      console.log("toggleStatus");
+      if (status.value === "active") {
+        status.value === "pending";
+      } else if (status.value === "pending") {
+        status.value === "inactive";
       } else {
-        status.value === 'active'
-      } 
-    }
+        status.value === "active";
+      }
+    };
 
     return {
       name,
       status,
       tasks,
-      toggleStatus
-    }
+      toggleStatus,
+    };
+  },
+};
+</script>
+
+<template>
+  <div>
+    <h1>{{ name }}</h1>
+  </div>
+  <div>
+    <p v-if="status === 'active'">User is active.</p>
+    <p v-else-if="status === 'pending'">User is pending.</p>
+    <p v-else>User is inactive.</p>
+    <h3>Tasks:</h3>
+    <ul>
+      <li v-for="task in tasks" :key="task">{{ task }}</li>
+    </ul>
+    <button @click="toggleStatus">Change status</button>
+  </div>
+</template>
+```
+
+Y está el modo más corto con composition, donde **setup** va dentro del **Script**: `<script setup>`, no se necesita el `export default` ni el `return`:
+
+```vue
+<script setup>
+import { ref } from "vue";
+
+// COMPOSITION de la forma mas corta
+const name = ref("John Doe");
+const status = ref("active");
+const tasks = ref(["Task 1", "Task 2", "Task 3"]);
+
+const toggleStatus = () => {
+  console.log("toggleStatus");
+  if (status.value === "active") {
+    status.value === "pending";
+  } else if (status.value === "pending") {
+    status.value === "inactive";
+  } else {
+    status.value === "active";
   }
 };
 </script>
@@ -200,64 +242,15 @@ export default {
   <div>
     <h1>{{ name }}</h1>
   </div>
-  <br />
-  <br />
   <div>
     <p v-if="status === 'active'">User is active.</p>
     <p v-else-if="status === 'pending'">User is pending.</p>
     <p v-else>User is inactive.</p>
-    <br />
     <h3>Tasks:</h3>
     <ul>
-      <li v-for="task in tasks" :key="task">{{ task }} </li>
+      <li v-for="task in tasks" :key="task">{{ task }}</li>
     </ul>
-    <br />
-     <button @click="toggleStatus" >Change status</button>
-  </div>
-</template>
-```
-
-
-Y está el modo más corto con composition, donde **setup** va dentro del **Script**: `<script setup>`, no se necesita el `export default` ni el `return`:
-
-```vue
-<script setup>
-import { ref } from 'vue';
-
-// COMPOSITION de la forma mas corta
-  const name = ref('John Doe');
-  const status = ref('active');
-  const tasks = ref(['Task 1', 'Task 2', 'Task 3']);
-
-  const toggleStatus = () => {
-    console.log('toggleStatus')
-    if(status.value === 'active') {
-      status.value === 'pending'
-    } else if (status.value === 'pending') {
-      status.value === 'inactive'
-    } else {
-      status.value === 'active'
-    } 
-  }
-</script>
-
-<template>
-  <div>
-    <h1>{{ name }}</h1>
-  </div>
-  <br />
-  <br />
-  <div>
-    <p v-if="status === 'active'">User is active.</p>
-    <p v-else-if="status === 'pending'">User is pending.</p>
-    <p v-else>User is inactive.</p>
-    <br />
-    <h3>Tasks:</h3>
-    <ul>
-      <li v-for="task in tasks" :key="task">{{ task }} </li>
-    </ul>
-    <br />
-     <button @click="toggleStatus" >Change status</button>
+    <button @click="toggleStatus">Change status</button>
   </div>
 </template>
 ```
@@ -268,17 +261,83 @@ import { ref } from 'vue';
 
 Similar a React donde guardamos en un estado los datos del formulario, en vue se crea una constante (prop) y con `ref()`se le puede dar un valor inciial, ejemplo: `const newTask = ref('Task 4'); `o bien `const newTask = ref(''); `.
 
-Y en el **formulario** con el `@submit`es como el  `onSubmit`de React y para hacer el `preventDefault` ya tiene el metodo `.prevent`:  `@submit.prevent`.
+Y en el **formulario** con el `@submit`es como el `onSubmit`de React y para hacer el `preventDefault` ya tiene el metodo `.prevent`: `@submit.prevent`.
 
 Luego como siempre relaciono el `label`con el atributo `for`, con el `input`con el atributo `id`y tambien nombro al `name`igual.
 
 Nuevo: tengo `v-model` para relacionar con la constante reactiva del estado (prop).
 
 ```vue
-<form @submit.prevent="addTask">
-  <label for="newTask">Add Task: </label>
-  <input type="text" id="newTask" name="newTask" v-model="newTask"/>
-</form>
+<template>
+  <form @submit.prevent="addTask">
+    <label for="newTask">Add Task: </label>
+    <input type="text" id="newTask" name="newTask" v-model="newTask" />
+    <button type="submit">Submit</button>
+  </form>
+</template>
+```
+
+Se tiene también el boton de `type="submit"`.
+
+Y en el `script` agrego el método para agregar al task nueva:
+
+```vue
+<script>
+const addTask = () => {
+  // If there is a value for newTask, then add new task
+  if (newTask.value.trim() !== "") {
+    tasks.value.push(newTask.value);
+    // Reset the newTaskValue to be able to add a new one
+    newTask.value = "";
+  }
+};
+</script>
+```
+
+
+Como agrego una nueva Task tambien puedo eliminarla, ais me queda todo el codigo:
+
+```vue
+<script setup>
+import { ref } from 'vue';
+
+// COMPOSITION de la forma mas corta
+  const tasks = ref(['Task 1', 'Task 2', 'Task 3']);
+  const newTask = ref(''); 
+
+  const addTask = () => {
+    // If there is a value for newTask, then add new task
+    if(newTask.value.trim() !== '') {
+      tasks.value.push(newTask.value);
+      // Reset the newTaskValue to be able to add a new one
+      newTask.value = '';
+    } 
+  }
+
+  const deleteTask = (index) => {
+    tasks.value.splice(index, 1);
+  }
+
+</script>
+
+<template>
+  <div>
+    <form @submit.prevent="addTask">
+      <label for="newTask">Add Task: </label>
+      <input type="text" id="newTask" name="newTask" v-model="newTask"/>
+      <button type="submit">Submit</button>
+    </form>
+    <h3>Tasks:</h3>
+    <ul>
+      <li v-for="(task, index) in tasks" :key="task">
+        <span class="task-item-name">
+          {{ task }}
+        </span> 
+        <button @click="deleteTask(index)">X</button> 
+      </li>
+    </ul>
+  </div>
+</template>
 ```
 
 ---
