@@ -53,7 +53,7 @@
           {{ job.location }}
         </div>
         <RouterLink
-          :href="`/job/${job.id}`"
+          :to="'/job/' + job.id"
           class="h-[36px] bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg text-center text-sm"
         >
           Read More
