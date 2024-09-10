@@ -111,3 +111,41 @@ Otro modo de hacerlo, sin `v-bind`, directamente con `:href`:
 ```vue
  <a :href="link">Click for Google</a>
 ```
+
+---
+
+## v-on:click
+
+Para el evento `onClick`del `<button>`. Ejemplo:
+
+```vue
+<script>
+export default {
+  data() {
+    return {
+      status: 'pending',
+    }
+  },
+  methods: {
+    toggleStatus() {
+      console.log('toggleStatus')
+      if(this.status === 'active') {
+        this.status === 'pending'
+      } else if (this.status === 'pending') {
+        this.status === 'inactive'
+      } else {
+        this.status === 'active'
+      }
+    }
+  }
+};
+</script>
+
+<template>
+  <div>
+    <button v-on:click="toggleStatus" >Change status</button>
+  </div>
+</template>
+```
+
+---
