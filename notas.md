@@ -114,9 +114,9 @@ Otro modo de hacerlo, sin `v-bind`, directamente con `:href`:
 
 ---
 
-## v-on:click
+## v-on:click / @click
 
-Para el evento `onClick`del `<button>`. Ejemplo:
+Para el evento `onClick`del `<button>`. Otro modo es con `@click`. Ejemplo:
 
 ```vue
 <script>
@@ -143,7 +143,8 @@ export default {
 
 <template>
   <div>
-    <button v-on:click="toggleStatus" >Change status</button>
+    <!--<button v-on:click="toggleStatus" >Change status</button>-->
+    <button @click="toggleStatus" >Change status</button>
   </div>
 </template>
 ```
