@@ -17,25 +17,27 @@ See the basic of Vue API preference composiiton and lifecycle methods:
 
 ---
 
-## Recommended IDE Setup
+## TECHNOLGIES:
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+```
+- HTML5
+- CSS3
+- JavaScript
+- VUE.js
+- Vite
+```
 
 ---
 
 ## COMMANDS
 
-### Project Setup
+1. Project Setup
 
 ```sh
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+2. Compile and Hot-Reload for Development
 
 ```sh
 npm run dev
@@ -45,7 +47,7 @@ And see it running at: [http://localhost:3000/](http://localhost:3000/)
 
 
 
-### Compile and Minify for Production
+3. Compile and Minify for Production
 
 ```sh
 npm run build
@@ -56,5 +58,15 @@ npm run build
 ## NOTES
 
 At file [`notas.md`](https://github.com/eugenia1984/vue-crash-2024/blob/main/notas.md) you can take a look of some annotations I did with the basic of VUE.js
+
+---
+
+## Recommended IDE Setup
+
+[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+
+## Customize configuration
+
+See [Vite Configuration Reference](https://vitejs.dev/config/).
 
 ---
