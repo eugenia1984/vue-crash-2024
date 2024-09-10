@@ -19,17 +19,17 @@
           <div class="md:ml-auto">
             <div class="flex space-x-2">
               <a
-                href="index.html"
+                href="/"
                 class="uppercase text-white bg-green-900 hover:bg-gray-900 hover:text-white rounded-md px-3 py-2"
                 >Home</a
               >
               <a
-                href="jobs.html"
+                href="/jobs"
                 class="uppercase text-white hover:bg-green-900 hover:text-white rounded-md px-3 py-2"
                 >Jobs</a
               >
               <a
-                href="add-job.html"
+                href="/jobs/add"
                 class="uppercase text-white hover:bg-green-900 hover:text-white rounded-md px-3 py-2"
                 >Add Job</a
               >
