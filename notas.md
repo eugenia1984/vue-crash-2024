@@ -513,3 +513,36 @@ const truncatedDescription = computed(() => {
 ```
 
 ---
+---
+
+## VUE-ROUTER
+
+Para hacer el ruteo de la aplicación.
+
+1. Creo: `/src/router/index.js` donde voy a tener mi `router`con las rutas. 
+
+2. Usamos **history** con  `createWebHistory` para contar con el historial de navegacion y asi poder ir a la pagina previa visitada.
+
+3. Usamos **router** que va a ser el array de las rutas, va a tener el `path`, el `name` de la ruta y el `componente`(la view que va a mostrar).
+
+```JavaScript
+import { createRouter, createWebHistory } from 'vue-router';
+import HomeView from '@/views/HomeView.vue';
+
+const router = createRouter({
+  history: createWebHistory(import.meta.env.BASE_URL),
+  router: [
+    {
+      path: '/',
+      name: 'home',
+      component: HomeView
+    }
+  ]
+});
+
+export default router;
+```
+
+4. En `src/views` voy a ir creando todas mis vistas (similar al folder `pages` de Next.js) que van a ser las que nombre en **component** dentro del objeto de `createRouter`.*:
+
+---
