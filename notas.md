@@ -575,4 +575,8 @@ app.mount("#app");
 </template>
 ```
 
+7. Y asi vamos creando `views`, las agregamos en el  `router`y las podemos ir viendo.
+
+8. Tal como tenemos el Link de React-Router o de Next-Router, tenemos `RouterLink` en Vue para las `<a>`. Y en vez de `href`es: `to`.
+
 ---
