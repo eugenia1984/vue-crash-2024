@@ -263,3 +263,22 @@ import { ref } from 'vue';
 ```
 
 ---
+
+## FORMULARIOS
+
+Similar a React donde guardamos en un estado los datos del formulario, en vue se crea una constante (prop) y con `ref()`se le puede dar un valor inciial, ejemplo: `const newTask = ref('Task 4'); `o bien `const newTask = ref(''); `.
+
+Y en el **formulario** con el `@submit`es como el  `onSubmit`de React y para hacer el `preventDefault` ya tiene el metodo `.prevent`:  `@submit.prevent`.
+
+Luego como siempre relaciono el `label`con el atributo `for`, con el `input`con el atributo `id`y tambien nombro al `name`igual.
+
+Nuevo: tengo `v-model` para relacionar con la constante reactiva del estado (prop).
+
+```vue
+<form @submit.prevent="addTask">
+  <label for="newTask">Add Task: </label>
+  <input type="text" id="newTask" name="newTask" v-model="newTask"/>
+</form>
+```
+
+---
