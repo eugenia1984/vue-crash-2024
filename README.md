@@ -19,6 +19,7 @@ Some VUE.js practice, from [Vue.js Crash Course 2024](https://www.youtube.com/wa
 
 ```
 - defineProps (to pass props to a component)
+- slot (similar to children of React)
 ```
 
 ---
