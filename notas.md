@@ -523,7 +523,7 @@ Para hacer el ruteo de la aplicación.
 
 2. Usamos **history** con  `createWebHistory` para contar con el historial de navegacion y asi poder ir a la pagina previa visitada.
 
-3. Usamos **router** que va a ser el array de las rutas, va a tener el `path`, el `name` de la ruta y el `componente`(la view que va a mostrar).
+3. Usamos **routes** que va a ser el array de las rutas, va a tener el `path`, el `name` de la ruta y el `componente`(la view que va a mostrar).
 
 ```JavaScript
 import { createRouter, createWebHistory } from 'vue-router';
@@ -531,7 +531,7 @@ import HomeView from '@/views/HomeView.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
-  router: [
+  routes: [
     {
       path: '/',
       name: 'home',
@@ -544,5 +544,35 @@ export default router;
 ```
 
 4. En `src/views` voy a ir creando todas mis vistas (similar al folder `pages` de Next.js) que van a ser las que nombre en **component** dentro del objeto de `createRouter`.*:
+
+5. En `main.js` tenemos que importar y usar **router** que creamos en `/src/router/index.js`:
+
+```JavaScript
+import "./assets/main.css";
+import "primeicons/primeicons.css";
+import router from './router';
+
+import { createApp } from "vue";
+import App from "./App.vue";
+
+const app = createApp(App);
+
+app.use(router);
+app.mount("#app");
+```
+
+6. Para que se puedan ver las views en `App.vue` se usa el `RouterView` que es similar al `outlet` de React, y se pone en la parte de la aplicación donde voy a tener las view, o sea justo abajo del NavBar:
+
+```vue
+<script setup>
+  import Navbar from '@/components/Navbar.vue';
+  import { RouterView } from 'vue-router';
+</script>
+
+<template>
+  <Navbar />
+  <RouterView />
+</template>
+```
 
 ---

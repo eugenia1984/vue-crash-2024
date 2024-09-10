@@ -23,7 +23,7 @@ Some VUE.js practice, from [Vue.js Crash Course 2024](https://www.youtube.com/wa
 - bind
 - ref
 - computed (similar to dependency array of useEffect hook)
-- vue-router
+- vue-router:  RouterView, createRouter, createWebHistory. 
 ```
 
 ---
