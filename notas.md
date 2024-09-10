@@ -449,3 +449,67 @@ Y en `src/assets/main.css`tengo que agregar los import de Tailwind:
 ```
 
 ---
+
+## computed
+
+Es similar al dependency array de useEffect hook. Se usa con `ref`para tener data reactiva y como tenemos `ref`se usa el `.value` para obtener el valor (similar al state de React).
+
+Ejemplo:
+
+```vue
+<script setup>
+import { defineProps, ref, computed } from 'vue';
+
+const props = defineProps({
+  job: Object
+})
+
+const showFulDescription = ref(false);
+
+const toggleFullDescription = () => {
+  showFulDescription.value = !showFulDescription.value;
+}
+
+const truncatedDescription = computed(() => {
+  let description = props.job.description;
+
+  if(!showFulDescription.value) {
+    description = description.substring(0, 90) + '...';
+  }
+
+  return description;
+});
+</script>
+
+<template>
+  <div class="bg-white rounded-xl shadow-md relative">
+    <div class="p-4">
+      <div class="mb-5 px-2">
+        <div>
+          {{ truncatedDescription }}
+          <button
+            @click="toggleFullDescription" 
+            class="text-green-500 hover:text-green-600 mb-5 border-solid border-2 border-green-500 px-2 rounded-md ml-2"
+          >
+            {{ showFulDescription ? 'Less': 'More' }}
+          </button>
+        </div>
+      </div>
+      <div class="flex flex-col lg:flex-row justify-between mb-4">
+        <div class="text-orange-700 mb-3">
+          <i class="pi pi-map-marker text-orange-700"></i>
+          {{ job.location }}
+        </div>
+        <a
+          :href="`/job/${job.id}`"
+          class="h-[36px] bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg text-center text-sm"
+        >
+          Read More
+        </a>
+      </div>
+    </div>
+  </div>
+</template>
+```
+
+---

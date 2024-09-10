@@ -30,12 +30,12 @@ const truncatedDescription = computed(() => {
         <h3 class="text-xl font-bold">{{ job.title }}</h3>
       </div>
 
-      <div class="mb-5">
+      <div class="mb-5 px-2">
         <div>
           {{ truncatedDescription }}
           <button
             @click="toggleFullDescription" 
-            class="text-green-500 hover:text-green-600 mb-5"
+            class="text-green-500 hover:text-green-600 mb-5 border-solid border-2 border-green-500 px-2 rounded-md ml-2"
           >
             {{ showFulDescription ? 'Less': 'More' }}
           </button>
@@ -48,7 +48,7 @@ const truncatedDescription = computed(() => {
 
       <div class="flex flex-col lg:flex-row justify-between mb-4">
         <div class="text-orange-700 mb-3">
-          <i class="fa-solid fa-location-dot text-lg"></i>
+          <i class="pi pi-map-marker text-orange-700"></i>
           {{ job.location }}
         </div>
         <a
