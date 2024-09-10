@@ -1,10 +1,11 @@
 <script setup>
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
 
 // COMPOSITION de la forma mas corta
   const name = ref('John Doe');
   const status = ref('active');
   const tasks = ref(['Task 1', 'Task 2', 'Task 3']);
+  // Similar to useState in order to save form data
   const newTask = ref(''); 
 
   const toggleStatus = () => {
@@ -18,6 +19,7 @@ import { ref } from 'vue';
     } 
   }
 
+  // To add a new Task
   const addTask = () => {
     // If there is a value for newTask, then add new task
     if(newTask.value.trim() !== '') {
@@ -27,10 +29,21 @@ import { ref } from 'vue';
     } 
   }
 
+  // To delete a task
   const deleteTask = (index) => {
     tasks.value.splice(index, 1);
   }
 
+// LifeCycle Methods
+onMounted(async() => {
+  try {
+    const response = await fetch('https://jsonplaceholder.typicode.com/todos');
+    const data = await response.json();
+    tasks.value = data.map( (task) => task.title)
+  } catch(error) {
+    console.log('Error fetching tasks')
+  }
+})
 </script>
 
 <template>
