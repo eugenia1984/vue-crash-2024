@@ -433,8 +433,19 @@ export default {
       }
     },
   },
+  variants: {
+    extend: {},
+  },
   plugins: [],
 }
+```
+
+Y en `src/assets/main.css`tengo que agregar los import de Tailwind:
+
+```CSS
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 ```
 
 ---
