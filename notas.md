@@ -105,3 +105,9 @@ export default {
   </div>
 </template>
 ```
+
+Otro modo de hacerlo, sin `v-bind`, directamente con `:href`:
+
+```vue
+ <a :href="link">Click for Google</a>
+```
