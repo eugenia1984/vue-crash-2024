@@ -408,3 +408,33 @@ onMounted(async() => {
 ```
 
 ---
+
+## ESTILOS CON TAILWIND 
+
+Me fijo en la [documentación de Tailwind](https://v2.tailwindcss.com/docs/guides/vue-3-vite).
+
+1. Instalar Tailwind: `npm install -D tailwindcss@latest postcss@latest autoprefixer@latest`
+
+2. Generar los archvos `tailwind.config.js` y `post.config.js`con: `npx tailwindcss init -p`.
+
+En el archivo de configuracion en **content** detallo todos los archivos en los que quiero aplicar Tailwind, y en el **theme** solo voy a setear la font-family y agregar una clase para el grid:
+
+```JavaScript
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: ['./index.html', './src/**/*.{vue, js, ts, jsx, tsx}'],
+  theme: {
+    extend: {
+      fontFamily: {
+        sans: ['Poppins', 'sans-serif']
+      },
+      gridTemplateColumns: {
+        '70/30': '70% 28%'
+      }
+    },
+  },
+  plugins: [],
+}
+```
+
+---

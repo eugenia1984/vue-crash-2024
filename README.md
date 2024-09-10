@@ -17,13 +17,14 @@ See the basic of Vue API preference composiiton and lifecycle methods:
 
 ---
 
-## TECHNOLGIES:
+## TECHNOLOGIES:
 
 ```
 - HTML5
 - CSS3
 - JavaScript
 - VUE.js
+- TailwindCSS
 - Vite
 ```
 
