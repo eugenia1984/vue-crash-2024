@@ -630,3 +630,14 @@ Ejemplo:
   </section>
 </template>
 ```
+
+-> En vez de **ref** se puede usar **reactive** pero hay diferencia entre ellas:
+
+| ref | reactive |
+| --- | -------- |
+| toma **objects** y **primitives** (String, Number, Boolean) | solo toma **objects** |
+| tiene la propiedad **.value** para reasignar valor | no tiene .value, ni puede reasignar |
+
+Forma facil de decidirse que usar, como por ejemplo en un form cuando se tiene cda valor del input en un estado, ahi se usari `ref`, pero si en cambio se tiene todo en un objeto se podria usar `reactive`.
+
+---
