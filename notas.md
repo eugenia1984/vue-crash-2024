@@ -581,4 +581,6 @@ app.mount("#app");
 
 9. Para tener una ruta de **not found**, el **path** debe ser:  `path: '/:catchAll(.*)',`.
 
+10. Cuando las rutas son dínámica, se contruyen pasando por ejemplo un id, el **path** debe indicar con **:**, por ejemplo: `path: '/jobs/:id',`.
+
 ---
