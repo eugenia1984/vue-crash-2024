@@ -579,4 +579,6 @@ app.mount("#app");
 
 8. Tal como tenemos el Link de React-Router o de Next-Router, tenemos `RouterLink` en Vue para las `<a>`. Y en vez de `href`es: `to`.
 
+9. Para tener una ruta de **not found**, el **path** debe ser:  `path: '/:catchAll(.*)',`.
+
 ---
