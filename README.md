@@ -60,6 +60,13 @@ npm run dev
 And see it running at: [http://localhost:3000/](http://localhost:3000/)
 
 
+```sh
+npm run server
+```
+
+To run the JSON-Server at port 5000, and use the endpoints:
+
+GET JOBS LIST: [http://localhost:5000/jobs](http://localhost:5000/jobs)
 
 3. Compile and Minify for Production
 
