@@ -15,6 +15,24 @@ Some VUE.js practice, from [Vue.js Crash Course 2024](https://www.youtube.com/wa
 
 -> You can take a look at `App3.vue` and  `App4.vue` file.
 
+![image](https://github.com/user-attachments/assets/a5dd81d7-8924-4a4e-9072-1aacf066826d)
+
+-View all jobs:
+
+![image](https://github.com/user-attachments/assets/1f07d2ff-d625-45a3-9914-947bd49e1755)
+
+-View one job:
+
+![image](https://github.com/user-attachments/assets/bcd16e53-5045-40ee-bb1a-296c5d697bbc)
+
+-Edit or Delete the job:
+
+![image](https://github.com/user-attachments/assets/cec5eef9-5e59-4185-af1a-051c0ad5cd0f)
+
+-Add a new job:
+
+![image](https://github.com/user-attachments/assets/f5733517-bd79-4111-98a3-98329270fb70)
+
 - Create an app of jobs, where I see these concepts:
 
 ```
