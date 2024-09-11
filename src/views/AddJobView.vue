@@ -1,5 +1,7 @@
 <script setup>
+  import router from '@/router';
   import { reactive } from 'vue';
+  import axios from 'axios';
 
   const form = reactive({
     type: 'Full-Time',
@@ -31,9 +33,12 @@
     };
 
     try {
-
+      const response = await axios.post('/api/jobs', newJob);
+      // TODO: Show toast
+      router.push(`/jobs/${response.data.id}`);
     } catch (error) {
       console.error('Error creating new job', error);
+      // TODO: Show toast
     }
   };
 </script>

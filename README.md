@@ -24,7 +24,7 @@ Some VUE.js practice, from [Vue.js Crash Course 2024](https://www.youtube.com/wa
 - ref, reactive
 - computed (similar to dependency array of useEffect hook).
 - lifeCycled methods: onMounted (similar to useEffect with [] as dependency array, call when the component it's mounted).
-- vue-router: RouterView, createRouter, createWebHistory, RouterLink, useRoute, not-found route, dynamic routes with :id, useRoute with .params (to get the params from the URL). 
+- vue-router: RouterView, createRouter, createWebHistory, RouterLink, useRoute, not-found route, dynamic routes with :id, useRoute with .params (to get the params from the URL), push(). 
 - @submit, .prevent, v-model (for forms)
 ```
 
