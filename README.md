@@ -21,9 +21,11 @@ Some VUE.js practice, from [Vue.js Crash Course 2024](https://www.youtube.com/wa
 - defineProps (to pass props to a component)
 - slot (similar to children of React)
 - bind
-- ref
-- computed (similar to dependency array of useEffect hook)
+- ref, reactive
+- computed (similar to dependency array of useEffect hook).
+- lifeCycled methods: onMounted (similar to useEffect with [] as dependency array, call when the component it's mounted).
 - vue-router: RouterView, createRouter, createWebHistory, RouterLink, useRoute, not-found route, dynamic routes with :id. 
+- @submit, .prevent, v-model (for forms)
 ```
 
 ---
@@ -41,6 +43,7 @@ Some VUE.js practice, from [Vue.js Crash Course 2024](https://www.youtube.com/wa
 
 - <img width="28" height="28" src="https://img.icons8.com/fluency/38/vuejs.png" alt="vuejs"/> VUE.js (Framework)
 
+- vue-spinner
 
 - PrimeIcons
 
