@@ -684,3 +684,28 @@ Forma facil de decidirse que usar, como por ejemplo en un form cuando se tiene c
 </template>
 ```
 ---
+---
+
+## vue-router
+
+Para obtener los parametros de la URL:
+
+En este caso como al parametro lo nombre `id`es `.id`, si el parametro fuera `slug`, x ej, deberia ser: `. slug`-
+
+```vue
+<script setup>
+  import PulseLoader from 'vue-spinner/src/PulseLoader.vue';
+  import { reactive, onMounted } from 'vue';
+  import { useRoute, RouterLink } from 'vue-router';
+  import axios from 'axios';
+  
+  // In order to get the id from the params
+  const route = useRoute();
+  const jobId = route.params.id;
+
+  const state = reactive({
+    job: {},
+    isLoading: true
+  })
+</script>
+```
