@@ -13,16 +13,38 @@
       contactEmail: '',
       contactPhone: ''
     }
-  })
+  });
+
+  const handleSubmit = async () => {
+    const newJob = {
+      title: form.title,
+      type: form.type,
+      location: form.location,
+      description: form.description,
+      salary: form.salary,
+      company: {
+        name: form.company.name,
+        description: form.company.description,
+        contactEmail: form.company.contactEmail,
+        contactPhone: form.company.contactPhone
+      }
+    };
+
+    try {
+
+    } catch (error) {
+      console.error('Error creating new job', error);
+    }
+  };
 </script>
 
 <template>
   <section class="bg-green-50 py-10">
     <div class="container m-auto max-w-2xl py-24">
       <div
-        class="bg-white px-6 py-8 mb-4 shadow-md rounded-md border m-4 md:m-0"
+        class="bg-whi0te px-6 py-8 mb-4 shadow-md rounded-md border m-4 md:m-0"
       >
-        <form>
+        <form @submit.prevent="handleSubmit">
           <h2 class="text-3xl text-center font-semibold mb-6 mt-6">Add Job</h2>
 
           <div class="mb-4">
@@ -30,6 +52,7 @@
               >Job Type</label
             >
             <select
+              v-model="form.type"
               id="type"
               name="type"
               class="border rounded w-full py-2 px-3"
@@ -47,6 +70,7 @@
               >Job Listing Name</label
             >
             <input
+              v-model="form.title"
               type="text"
               id="name"
               name="name"
@@ -62,6 +86,7 @@
               >Description</label
             >
             <textarea
+              v-model="form.description"
               id="description"
               name="description"
               class="border rounded w-full py-2 px-3"
@@ -75,6 +100,7 @@
               >Salary</label
             >
             <select
+              v-model="form.salary"
               id="salary"
               name="salary"
               class="border rounded w-full py-2 px-3"
@@ -100,6 +126,7 @@
             </label>
             <input
               type="text"
+              v-model="form.location"
               id="location"
               name="location"
               class="border rounded w-full py-2 px-3 mb-2"
@@ -116,6 +143,7 @@
             >
             <input
               type="text"
+              v-model="form.company.name"
               id="company"
               name="company"
               class="border rounded w-full py-2 px-3"
@@ -131,6 +159,7 @@
             >
             <textarea
               id="company_description"
+              v-model="form.company.description"
               name="company_description"
               class="border rounded w-full py-2 px-3"
               rows="4"
@@ -146,6 +175,7 @@
             >
             <input
               type="email"
+              v-model="form.company.contactEmail"
               id="contact_email"
               name="contact_email"
               class="border rounded w-full py-2 px-3"
@@ -161,6 +191,7 @@
             >
             <input
               type="tel"
+              v-model="form.company.contactPhone"
               id="contact_phone"
               name="contact_phone"
               class="border rounded w-full py-2 px-3"
