@@ -9,7 +9,14 @@ export default defineConfig({
     vue(),
   ],
   server: {
-    port: 3000
+    port: 8000,
+    proxy: {
+      '/api': {
+        target: 'http://localhost:8000',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, ''),
+      }
+    }
   },
   resolve: {
     alias: {
