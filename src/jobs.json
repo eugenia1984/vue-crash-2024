@@ -83,20 +83,6 @@
         "contactEmail": "contact@ipsumlorem.com",
         "contactPhone": "555-555-5555"
       }
-    },
-    {
-      "id": "6f39",
-      "title": "Front End with React and Nextjs",
-      "type": "Full-Time",
-      "location": "Spain",
-      "description": "Front End Developer with React and Nextjs.\n",
-      "salary": "$50K - $60K",
-      "company": {
-        "name": "CellsIA",
-        "description": "CellsIA company description",
-        "contactEmail": "cells-ia-contact@cells-ia.com",
-        "contactPhone": "612345678"
-      }
     }
   ]
 }
