@@ -30,16 +30,26 @@ Some VUE.js practice, from [Vue.js Crash Course 2024](https://www.youtube.com/wa
 
 ## TECHNOLOGIES:
 
-```
-- HTML5
-- CSS3
-- JavaScript
-- VUE.js
-- TailwindCSS
+
+- <img width="28" height="28" src="https://img.icons8.com/fluency/38/html-5.png" alt="html-5"/> HTML5
+
+- <img width="28" height="28" src="https://img.icons8.com/fluency/38/css3.png" alt="css3"/> CSS3
+
+- <img width="28" height="28" src="https://img.icons8.com/color/28/javascript--v1.png" alt="javascript--v1"/> JavaScript
+
+- <img width="28" height="28" src="https://img.icons8.com/fluency/38/tailwind_css.png" alt="tailwind_css"/> TailwindCSS (for the styles)
+
+- <img width="28" height="28" src="https://img.icons8.com/fluency/38/vuejs.png" alt="vuejs"/> VUE.js (Framework)
+
+
 - PrimeIcons
+
 - JSON Server
-- Vite
-```
+
+- Axios
+
+- <img width="28" height="28" src="https://img.icons8.com/color/28/vite.png" alt="vite"/> Vite
+
 
 ---
 

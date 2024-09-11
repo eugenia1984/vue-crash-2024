@@ -12,7 +12,7 @@
     }
   })
 
-  const jobs = ref(jobData);
+  const jobs = ref([]);
 </script>
 
 <template>
