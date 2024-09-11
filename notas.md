@@ -584,3 +584,49 @@ app.mount("#app");
 10. Cuando las rutas son dínámica, se contruyen pasando por ejemplo un id, el **path** debe indicar con **:**, por ejemplo: `path: '/jobs/:id',`.
 
 ---
+---
+
+## LIFECYCLED METHOD - onMounted
+
+Es similar al hook **useEffect** cuando el dependency array está vacío, ya que se llama al montar el componente.
+
+Dentro uso el fecth de axios para traer la lista de trabajo, se usa junto al `ref`, por lo que luego se hace el setter del estado ocn el `.value`.
+
+Ejemplo:
+
+```vue
+<script setup>
+  import { RouterLink } from 'vue-router';
+  import { ref, defineProps, onMounted } from 'vue';
+  import  JobListing  from '@/components/JobListing.vue';
+  import axios from 'axios';
+
+  defineProps({
+    limit: Number
+  })
+
+  const jobs = ref([]);
+
+  onMounted(async() => {
+    try {
+      const response = await axios.get('http://localhost:5000/jobs');
+      jobs.value = response.data;
+    } catch(error) {
+      console.error('Error fetching jobs');
+    }
+  })
+</script>
+
+<template>
+  <section class="bg-blue-50 px-4 py-10">
+    <div class="container-xl lg:container m-auto">
+      <h2 class="text-3xl font-bold text-green-500 mb-6 text-center">
+        Browse jobs
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <JobListing v-for="job in jobs.slice(0, limit || jobs.length)" :key="job.id" :job="job"/>
+      </div>
+    </div>
+  </section>
+</template>
+```
