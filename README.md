@@ -45,6 +45,8 @@ Some VUE.js practice, from [Vue.js Crash Course 2024](https://www.youtube.com/wa
 
 - vue-spinner
 
+- vue-toastification (toast to show messages)
+
 - PrimeIcons
 
 - JSON Server
