@@ -23,7 +23,7 @@ Some VUE.js practice, from [Vue.js Crash Course 2024](https://www.youtube.com/wa
 - bind
 - ref
 - computed (similar to dependency array of useEffect hook)
-- vue-router:  RouterView, createRouter, createWebHistory, RouterLink, useRoute. 
+- vue-router: RouterView, createRouter, createWebHistory, RouterLink, useRoute, not-found route, dynamic routes with :id. 
 ```
 
 ---
@@ -37,6 +37,7 @@ Some VUE.js practice, from [Vue.js Crash Course 2024](https://www.youtube.com/wa
 - VUE.js
 - TailwindCSS
 - PrimeIcons
+- JSON Server
 - Vite
 ```
 
