@@ -135,3 +135,8 @@ At file [`notas.md`](https://github.com/eugenia1984/vue-crash-2024/blob/main/not
 See [Vite Configuration Reference](https://vitejs.dev/config/).
 
 ---
+
+## Notes
+
+I appreciate your interest in this repository ⌨️ with ❤️ by [María Eugenia Costa](https://github.com/eugenia1984) 😊 and follow me on [LinkedIn - maria-eugenia-costa](https://www.linkedin.com/in/maria-eugenia-costa/)
+
